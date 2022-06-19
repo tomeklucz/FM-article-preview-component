@@ -24,6 +24,11 @@ body {
   line-height: 1.5;
   color: var(--desaturated-dark-blue);
   font-weight: 500;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -48,6 +53,9 @@ main {
 
 .main-content {
   width: 100%;
+}
+
+.text-container {
   padding: 1rem;
 }
 
@@ -58,11 +66,16 @@ main {
   color: var(--very-dark-grayish-blue);
 }
 
-.author-container {
+.social-container {
+  position: relative;
+}
+
+.social-single-container {
+  padding: 0 1rem;
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  height: 5rem;
 }
 
 .author-avatar-container {
@@ -80,17 +93,62 @@ main {
   font-size: 1em;
 }
 
-.share-icon {
+.share-icon-container {
   position: absolute;
-  right: 0;
-  height: 70%;
+  right: 1rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   padding: 0.5rem;
   background-color: var(--light-grayish-blue);
 }
 
+.share-icon {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.share-window {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--very-dark-grayish-blue);
+}
+
 .share-icon:hover {
   cursor: pointer;
+}
+
+.share-window .share-icon-container {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.share-window .share-icon {
+  filter: brightness(0) invert(1);
+}
+
+.share-text {
+  color: var(--grayish-blue);
+  letter-spacing: 10px;
+  margin-right: 1rem;
+}
+
+.icon {
+  content: url(/images/icon-facebook.svg);
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.icon:nth-of-type(2) {
+  content: url(/images/icon-twitter.svg);
+}
+
+.icon:nth-of-type(3) {
+  content: url(/images/icon-pinterest.svg);
 }
 
 /* FOOTER */
@@ -109,15 +167,11 @@ footer a:hover {
   color: orangered;
 }
 
-@media (min-width: 1024px) {
-  body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.hidden {
+  display: none;
+}
 
+@media (min-width: 1024px) {
   main {
     display: flex;
     align-items: center;
@@ -142,7 +196,7 @@ footer a:hover {
   .main-content {
     max-height: 100%;
     width: 60%;
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .main-heading {

@@ -11,6 +11,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
 
     <title>Frontend Mentor | Article preview component</title>
   </head>
@@ -31,16 +32,29 @@
             you make any room feel complete.
           </p>
         </div>
-        <div class="author-container">
-          <figure class="author-avatar-container">
-            <img class="avatar-img" src="images/avatar-michelle.jpg" alt="" />
-          </figure>
-          <div class="author-text">
-            <h2 class="author-name">Michelle Appleton</h2>
-            <p class="post-date">28 Jun 2020</p>
+        <section class="social-container">
+          <div class="social-single-container">
+            <figure class="author-avatar-container">
+              <img class="avatar-img" src="images/avatar-michelle.jpg" alt="" />
+            </figure>
+            <div class="author-text">
+              <h2 class="author-name">Michelle Appleton</h2>
+              <p class="post-date">28 Jun 2020</p>
+            </div>
+            <figure class="share-icon-container">
+              <img class="share-icon" src="/images/icon-share.svg" alt="" />
+            </figure>
           </div>
-          <img class="share-icon" src="/images/icon-share.svg" alt="" />
-        </div>
+          <div class="social-single-container share-window hidden">
+            <p class="share-text">SHARE</p>
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <figure class="share-icon-container">
+              <img class="share-icon" src="/images/icon-share.svg" alt="" />
+            </figure>
+          </div>
+        </section>
       </section>
     </main>
 
